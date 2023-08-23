@@ -1,0 +1,28 @@
+{
+  "name": "level",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "start": "vite serve",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.0",
+    "@types/node": "^20.5.3",
+    "sass": "^1.62.1",
+    "typescript": "^5.0.2",
+    "vite": "^4.3.9",
+    "vite-dts": "^1.0.4",
+    "vite-plugin-dts": "^2.3.0",
+    "vite-plugin-glsl": "^1.1.2"
+  },
+  "dependencies": {
+    "animejs": "^3.2.1",
+    "gyronorm": "^2.0.6",
+    "locomotive-scroll": "^4.1.4",
+    "three": "^0.155.0"
+  }
+}
