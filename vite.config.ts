@@ -12,6 +12,7 @@ export default defineConfig({
     target: "esnext",
     // Leave minification up to applications.
     minify: false,
+    assetsDir: ".",
   },
   plugins: [
     glsl(),
