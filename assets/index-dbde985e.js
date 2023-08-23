@@ -2255,4 +2255,4 @@ function arrowOnClick(nextIndex) {
 }
 prevNav.onclick = () => arrowOnClick(prevActiveIndex - 1);
 nextNav.onclick = () => arrowOnClick(prevActiveIndex + 1);
-//# sourceMappingURL=index-d12116df.js.map
+//# sourceMappingURL=index-dbde985e.js.map
