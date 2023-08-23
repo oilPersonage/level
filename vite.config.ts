@@ -6,18 +6,6 @@ import glsl from "vite-plugin-glsl";
 // https://vitejs.dev/config/
 export default defineConfig({
   build: {
-    lib: {
-      entry: "src/index.tsx",
-      formats: ["es", "cjs"],
-    },
-    rollupOptions: {
-      external: ["react"],
-      output: {
-        // Since we publish our ./src folder, there's no point
-        // in bloating sourcemaps with another copy of it.
-        sourcemapExcludeSources: true,
-      },
-    },
     sourcemap: true,
     // Reduce bloat from legacy polyfills.
     target: "esnext",
