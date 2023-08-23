@@ -6,13 +6,13 @@ import glsl from "vite-plugin-glsl";
 // https://vitejs.dev/config/
 export default defineConfig({
   base: "/level/",
+  publicDir: "./",
   build: {
     sourcemap: true,
     // Reduce bloat from legacy polyfills.
     target: "esnext",
     // Leave minification up to applications.
     minify: false,
-    assetsDir: "./assets/img/",
   },
   plugins: [
     glsl(),
