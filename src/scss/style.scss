@@ -1,0 +1,970 @@
+@import 'variables';
+
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dashoffset: 300;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes Record {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes textShine {
+  0% {
+    background-position: 0% 50%;
+  }
+  30% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.logo {
+  &__wrapper {
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% + 6px));
+
+    &.stop {
+      .logo {
+        &__l, &__l_rev, &__e, &__e_rev {
+          stroke-dasharray: 0;
+          animation: none;
+          fill: white;
+          stroke-width: 0;
+        }
+      }
+    }
+  }
+
+  &__l, &__l_rev {
+    stroke-dasharray: 50;
+    animation: dash 5s ease-in-out infinite;
+  }
+
+  &__e, &__e_rev {
+    stroke-dasharray: 35;
+    animation: dash 5s ease-in-out infinite;
+  }
+}
+
+.scrolled {
+  position: relative;
+}
+
+.overlay {
+  &_top, &_bottom, &_line {
+    position: fixed;
+    z-index: 4;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    background: $dark;
+    height: 50%;
+    width: 100%;
+  }
+
+  &_line {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background: $white;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 160px;
+      background: $dark;
+      height: 3px;
+    }
+  }
+
+  &_top {
+    top: 0;
+  }
+
+  &_bottom {
+    bottom: 0;
+  }
+}
+
+.header {
+  height: 100vh;
+  width: 100vw;
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.7;
+    background: $dark;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__line {
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    width: $md
+  }
+
+  &__mobileImg {
+    display: none;
+    height: 100%;
+  }
+
+  &__links {
+    position: relative;
+    font-size: 1.6em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      .header__links__line {
+        opacity: 1;
+      }
+    }
+
+    &__line {
+      position: absolute;
+      z-index: 2;
+      bottom: 0;
+      left: 0;
+      height: 1px;
+      width: $md;
+      opacity: 0;
+      background: $accent;
+      transition: 0.3s;
+    }
+
+    &Dot {
+      margin-right: $md;
+      width: $base;
+      height: 1px;
+      background: $white;
+    }
+
+    a {
+      font-weight: 100;
+      margin-right: $md;
+      cursor: pointer;
+      transition: 0.1s;
+      position: relative;
+      display: flex;
+
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+
+  &__middle {
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__videoDecorations {
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70vw;
+    max-width: 1024px;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    &__svgWrapper {
+      display: flex;
+      justify-content: space-between;
+      height: 100%;
+      width: 100%;
+
+      > div {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &__videoDecoration {
+
+    &_record {
+      position: absolute;
+      top: $sm;
+      left: $sm;
+    }
+
+    &_animate {
+      animation: Record 2s ease-in-out infinite;
+    }
+
+    &Left {
+      width: 43px;
+
+      &_bottom {
+        svg {
+          transform: rotate(-90deg);
+        }
+      }
+    }
+
+    &Right {
+      &_bottom {
+        svg {
+          transform: rotate(90deg);
+        }
+      }
+    }
+
+    &_right {
+      height: 100%;
+    }
+  }
+
+  &__heading {
+    opacity: 0;
+    margin-top: 0;
+    font-weight: bold;
+    background: linear-gradient(-54deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 37%, rgb(0, 0, 0) 39%, rgb(0, 0, 0) 39%, rgba(255, 255, 255, 1) 41%, rgba(255, 255, 255, 1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+    background-size: 300% auto;
+    animation: textShine 7s ease-in-out infinite;
+  }
+
+  &__logo {
+    opacity: 0;
+    display: flex;
+
+    &.show {
+      opacity: 1;
+    }
+  }
+
+  &__contacts {
+    position: absolute;
+    z-index: 44;
+    bottom: $md;
+    right: $lg;
+    color: $white;
+    font-size: 1.6em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    span {
+      font-size: 0.83em;
+      margin-top: -2px;
+      vertical-align: text-top;
+      display: inline-block;
+    }
+  }
+
+  &__callButton {
+    color: $accent;
+    border-bottom: dashed 0.5px $accent;
+    line-height: 1;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &:hover {
+      color: $white;
+      border-bottom: dashed 0.5px $white;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__arrowDown {
+    position: absolute;
+    z-index: 4;
+    bottom: $md;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.sidebarLogotype {
+  position: fixed;
+  z-index: 99999999;
+  top: $md;
+  left: $lg;
+  display: flex;
+  color: white;
+
+  &__text {
+    margin-left: $sm;
+  }
+
+  p {
+    font-size: 0.8em;
+    margin: 0;
+    line-height: 0.8;
+
+    &:first-child {
+      margin-bottom: $base;
+    }
+  }
+}
+
+.sidebar {
+  position: fixed;
+  z-index: 99999999;
+  top: $md;
+  right: $lg - $base;
+  display: flex;
+  margin-top: -$base;
+
+  &__lang {
+    margin-right: $md;
+    margin-top: -$base;
+    display: flex;
+
+    > div {
+      color: $white;
+
+      &.active {
+        color: $accent;
+      }
+    }
+
+    &Button {
+      background: none;
+      border: none;
+      opacity: 1;
+      font-size: 12px;
+      padding: 0;
+      font-weight: 400;
+      color: inherit;
+      cursor: pointer;
+      transition: 0.15s;
+      margin-right: $sm;
+      font-family: "Vonique 43";
+
+      &.active {
+        color: $accent;
+      }
+
+      &:hover {
+        color: $accent;
+      }
+    }
+  }
+}
+
+
+.sidebarAnimate {
+  opacity: 0;
+}
+
+.hamburger {
+  width: $md;
+  height: $md;
+  padding: $base;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  cursor: pointer;
+
+  &:hover {
+    span {
+      &:first-child {
+        width: 60%;
+      }
+
+      &:last-child {
+        transform: translateX(-10px);
+      }
+    }
+  }
+
+  span {
+    height: 3px;
+    width: 100%;
+    background: $white;
+    transition: 0.3s cubic-bezier(.05, .87, .01, 1);
+
+    &:last-child {
+      width: 60%;
+    }
+  }
+
+  &.opened {
+    span {
+      &:first-child, &:last-child {
+        width: 60%;
+      }
+    }
+  }
+}
+
+.modal {
+  width: 40vw;
+  background: $dark;
+  color: white;
+  max-height: 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: $dark;
+    opacity: 0;
+    transition: 0.4s ease-out;
+
+    &.show {
+      opacity: 0.7;
+    }
+  }
+
+  &__header {
+    padding: $md $md;
+    font-size: 1.4em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  &__body {
+    padding: $md $lg;
+  }
+
+  &__footer {
+    padding: $md $md;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__button {
+    background: transparent;
+    color: $white;
+    padding: $sm $md;
+    cursor: pointer;
+
+    &_accept {
+      background: $accent;
+      font-size: 1em;
+      margin-right: $md;
+    }
+  }
+
+  &__wrapper {
+    display: none;
+    top: 0;
+    width: 100vw;
+    position: fixed;
+    height: 100vh;
+    z-index: 6;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__decorLine {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    //width: 20%;
+    height: 1px;
+    background: $white;
+
+    &_left {
+      left: 0;
+    }
+
+    &_right {
+      right: 0;
+    }
+  }
+}
+
+.menu {
+  position: relative;
+  z-index: 3;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  display: none;
+  margin: 0 144px 0 0;
+  padding-left: 0;
+  width: 100%;
+
+  &__bg {
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $dark;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+
+    &.show {
+      opacity: 0.7;
+    }
+  }
+
+  &__lang {
+    color: $white;
+    margin-bottom: $md;
+    display: none;
+
+    > div {
+      &.active {
+        color: $accent;
+      }
+    }
+  }
+
+
+  &__logoText {
+    margin-top: $sm;
+  }
+
+  &__logo {
+    color: white;
+    margin-bottom: $lg;
+    opacity: 0;
+
+    p {
+      line-height: 0.8;
+      margin: 0;
+
+      &:first-child {
+        margin-bottom: $base;
+      }
+    }
+  }
+
+  &__linksWrapper {
+    position: relative;
+    z-index: 3;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    width: $menuWidth;
+  }
+
+  &__wrapper {
+    position: fixed;
+    z-index: 9999999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: flex-end;
+    display: none;
+  }
+
+  &__overlay {
+    background: $dark;
+    position: absolute;
+    top: -100%;
+    right: 0;
+    width: $menuWidth + $lg;
+    height: 50vh;
+
+    &_bottom {
+      top: auto;
+      bottom: -100%;
+    }
+  }
+
+  &__line {
+    position: absolute;
+    right: $menuWidth + $lg;;
+    top: 0;
+    height: 30px;
+    background: $accent;
+    width: 1px;
+    margin: 15px 0;
+    transition: 0.3s ease-out;
+    opacity: 0;
+
+    &.show {
+      opacity: 1;
+    }
+  }
+
+
+  &__item {
+    font-size: 1.4rem;
+    font-weight: 100;
+    margin: 20px 0;
+    height: 20px;
+    transition: 0.15s;
+    line-height: 0.8;
+    max-height: 20px;
+    opacity: 0;
+
+    &:hover {
+      color: $accent;
+    }
+
+    &.active {
+      color: $accent;
+
+      &:hover {
+        margin-left: 0;
+      }
+
+    }
+  }
+}
+
+
+// SHOW
+
+.show {
+  &__wrapper {
+    max-height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+  }
+}
+
+.carousel {
+  min-height: 100vh;
+  width: calc(100vw - 400px);
+  overflow: hidden;
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__imgWrapper {
+    min-height: 100vh;
+  }
+
+  &__actionWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 100%;
+    overflow: hidden;
+
+    &.active {
+      left: 0;
+    }
+
+    img {
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  &__data {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__cardsWrapper {
+    display: flex;
+    position: relative;
+    background: $white;
+  }
+
+  &__card {
+    padding: $md;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s cubic-bezier(.05, .87, .01, 1);
+
+    &Line {
+      position: absolute;
+      left: 0;
+      width: calc(100% / 3);
+      height: 100%;
+      background: $dark;
+      transition: 0.3s cubic-bezier(.05, .87, .01, 1);
+    }
+
+    &Advantages {
+      display: flex;
+      font-size: 0.8em;
+
+      div {
+        margin-right: $base * 2;
+      }
+    }
+
+    &Heading {
+      font-weight: bold;
+    }
+
+    &Number {
+      position: absolute;
+      font-size: 6em;
+      line-height: 0.8;
+      font-weight: bold;
+      top: $base;
+      left: -$base * 6;
+      opacity: 0.1;
+    }
+
+    &.active {
+      color: white;
+
+      &:hover {
+        background: transparent;
+      }
+
+      .carousel__cardHeading {
+        color: $accent;
+      }
+    }
+
+    &:hover {
+      background: lighten($accent, 20);
+    }
+  }
+
+  &__info {
+    position: relative;
+    background: $white;
+    width: 400px;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 $lg;
+    overflow: hidden;
+
+    &Wrapper {
+      position: relative;
+      left: 0;
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      margin-top: 90px;
+    }
+
+    &Item {
+      position: absolute;
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+
+    &Line {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: $lg + 18px;
+      background: $dark;
+    }
+
+    &Header {
+      margin-bottom: $lg;
+    }
+
+    &Reviews {
+      font-size: 0.7em;
+      background: $accent;
+      padding: $base $sm;
+      width: max-content;
+    }
+  }
+
+  &__navWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  &__arrows {
+    display: flex;
+  }
+
+  &__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $md;
+    height: $md;
+    padding: $base * 2;
+    background: rgba($dark, 0.8);
+    transition: 0.15s;
+
+    &_left, &_right {
+      &.disabled {
+        opacity: 0.5;
+        cursor: auto;
+
+        &:hover {
+          background: rgba($dark, 0.8);
+        }
+      }
+    }
+
+    &_right {
+      transform: rotate(180deg);
+    }
+
+    &:hover {
+      background: $dark;
+    }
+  }
+
+  &__infoLogo {
+    width: $lg * 2;
+  }
+
+  &__infoButton {
+    background: none;
+    border: 1px solid $accent;
+    font-size: 1.4em;
+    height: auto;
+    padding: $base * 5 $md;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    span {
+      pointer-events: none;
+      position: relative;
+      z-index: 2;
+      margin: 0;
+    }
+
+    &:after {
+      content: '';
+      visibility: hidden;
+      position: absolute;
+      transition: 0.3s cubic-bezier(.05, .87, .01, 1);
+      left: 0;
+      top: 100%;
+      height: 100%;
+      width: 100%;
+      background: $dark;
+    }
+
+    &:hover {
+      color: $accent;
+
+      &:after {
+        visibility: visible;
+        transform: translateY(-100%);
+      }
+    }
+  }
+
+  &__advantages {
+    width: 100%;
+    margin-bottom: $lg - $sm;
+  }
+
+  &__advantage {
+    display: flex;
+    margin-bottom: $sm * 2;
+    align-items: center;
+
+    &Left {
+      width: $sm * 2;
+      height: $sm * 2;
+      margin-right: $sm * 2;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__price {
+    font-size: 2em;
+    margin-bottom: $md;
+    line-height: 0.8;
+    font-weight: 100;
+    font-family: "Vonique 43";
+
+    span {
+      font-size: 0.6em;
+    }
+  }
+}

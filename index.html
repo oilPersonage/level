@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8"/>
+  <!--    <link rel="icon" type="image/svg+xml" href="/vite.svg" />-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;600;800&display=swap" rel="stylesheet">
+  <title>Level</title>
+</head>
+
+<body>
+
+<div class="sidebarLogotype sidebarAnimate">
+  <svg width="100" height="25" viewBox="0 0 264 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill="white"
+          d="M0.149414 57.9732V0.231326H4.27384V53.8488H37.1867V57.9732H0.149414Z"
+    />
+    <path fill="white"
+          d="M52.7101 57.9732V0.231326H90.5723V4.35575H57.1157V53.8488H90.5723V57.9732H52.7101Z"
+    />
+    <path fill="white"
+          d="M257.085 54.3061V0.229492H261.209V57.9713H224.162V53.8469L257.085 54.3061Z"
+    />
+    <path
+      d="M127.569 57.9732L103.813 0.231385H108.35L124.352 38.671C125.122 40.5407 125.81 42.2455 126.415 43.7852C127.02 45.27 127.597 46.6998 128.147 48.0746C128.091 47.9341 129.569 51.8508 129.569 51.8508C130.119 53.2806 130.352 53.8488 130.352 53.8488C130.352 53.8488 131.089 52.1166 131.859 50.1368C132.629 48.1021 133.371 46.1774 134.086 44.3627C134.801 42.5479 135.653 40.4857 136.643 38.176L153.141 0.231385H157.678L132.766 57.9732H127.569Z"
+      fill="url(#paint0_linear_450_1812)"/>
+    <path d="M75.4824 26.0731V30.1975H90.5725V26.0731H75.4824Z" fill="url(#paint1_linear_450_1813)"/>
+    <path fill="white"
+          d="M208.783 57.9732V0.231323H170.921V4.35575H204.378V53.8488H170.921V57.9732H208.783Z"/>
+    <path d="M186.012 26.073V30.1974H170.922V26.073H186.012Z"
+          fill="url(#paint2_linear_450_1811)"/>
+    <defs>
+      <linearGradient id="paint0_linear_450_1812" x1="130.679" y1="0.229492" x2="130.679" y2="57.9732"
+                      gradientUnits="userSpaceOnUse">
+        <stop stop-color="#FFFDE8"/>
+        <stop offset="1" stop-color="#AA986A"/>
+      </linearGradient>
+      <linearGradient id="paint1_linear_450_1813" x1="83.0275" y1="26.0731" x2="83.0275" y2="30.1975"
+                      gradientUnits="userSpaceOnUse">
+        <stop stop-color="#FFFDE8"/>
+        <stop offset="1" stop-color="#AA986A"/>
+      </linearGradient>
+      <linearGradient id="paint2_linear_450_1811" x1="178.467" y1="26.073" x2="178.467" y2="30.1974"
+                      gradientUnits="userSpaceOnUse">
+        <stop stop-color="#FFFDE8"/>
+        <stop offset="1" stop-color="#AA986A"/>
+      </linearGradient>
+    </defs>
+  </svg>
+  <div class="sidebarLogotype__text">
+    <p data-i18="sidebarLogoText1">эксперты</p>
+    <p data-i18="sidebarLogoText2">в недвижимости</p>
+  </div>
+</div>
+<div class="sidebar">
+  <div class="sidebar__lang">
+    <div class="sidebarAnimate active" data-lang-name="ru">
+      <a href="#" class="sidebar__langButton">ru</a>
+    </div>
+    <div class="sidebarAnimate" data-lang-name="en">
+      <a href="#" class="sidebar__langButton">en</a>
+    </div>
+  </div>
+
+  <div class="hamburger sidebarAnimate">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<div class="overlay_top"></div>
+<div class="overlay_line"></div>
+<div class="overlay_bottom"></div>
+<div class="logo__wrapper" id="logotypeLoader">
+  <svg width="400" height="100" viewBox="0 0 264 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path class="logo__l" stroke="white" stroke-width="0.5px"
+          d="M0.149414 57.9732V0.231326H4.27384V53.8488H37.1867V57.9732H0.149414Z"
+    />
+    <path class="logo__e" stroke="white" stroke-width="0.5px"
+          d="M52.7101 57.9732V0.231326H90.5723V4.35575H57.1157V53.8488H90.5723V57.9732H52.7101Z"
+    />
+    <path class="logo__l_rev" stroke="white" stroke-width="0.5px"
+          d="M257.085 54.3061V0.229492H261.209V57.9713H224.162V53.8469L257.085 54.3061Z"
+    />
+    <path
+      d="M127.569 57.9732L103.813 0.231385H108.35L124.352 38.671C125.122 40.5407 125.81 42.2455 126.415 43.7852C127.02 45.27 127.597 46.6998 128.147 48.0746C128.091 47.9341 129.569 51.8508 129.569 51.8508C130.119 53.2806 130.352 53.8488 130.352 53.8488C130.352 53.8488 131.089 52.1166 131.859 50.1368C132.629 48.1021 133.371 46.1774 134.086 44.3627C134.801 42.5479 135.653 40.4857 136.643 38.176L153.141 0.231385H157.678L132.766 57.9732H127.569Z"
+      fill="url(#paint0_linear_450_1815)"/>
+    <path d="M75.4824 26.0731V30.1975H90.5725V26.0731H75.4824Z" fill="url(#paint1_linear_450_1815)"/>
+    <path class="logo__e" stroke="white" stroke-width="0.5px"
+          d="M208.783 57.9732V0.231323H170.921V4.35575H204.378V53.8488H170.921V57.9732H208.783Z"/>
+    <path d="M186.012 26.073V30.1974H170.922V26.073H186.012Z"
+          fill="url(#paint2_linear_450_1815)"/>
+    <defs>
+      <linearGradient id="paint0_linear_450_1815" x1="130.679" y1="0.229492" x2="130.679" y2="57.9732"
+                      gradientUnits="userSpaceOnUse">
+        <stop stop-color="#FFFDE8"/>
+        <stop offset="1" stop-color="#AA986A"/>
+      </linearGradient>
+      <linearGradient id="paint1_linear_450_1815" x1="83.0275" y1="26.0731" x2="83.0275" y2="30.1975"
+                      gradientUnits="userSpaceOnUse">
+        <stop stop-color="#FFFDE8"/>
+        <stop offset="1" stop-color="#AA986A"/>
+      </linearGradient>
+      <linearGradient id="paint2_linear_450_1815" x1="178.467" y1="26.073" x2="178.467" y2="30.1974"
+                      gradientUnits="userSpaceOnUse">
+        <stop stop-color="#FFFDE8"/>
+        <stop offset="1" stop-color="#AA986A"/>
+      </linearGradient>
+    </defs>
+  </svg>
+</div>
+
+<div class="modal__wrapper">
+  <div class="modal__overlay"></div>
+  <div class="modal__decorLine modal__decorLine_left"></div>
+  <div class="modal__decorLine modal__decorLine_right"></div>
+  <div class="modal">
+    <div class="modal__header" data-i18="requestCallHeading">заказать звонок</div>
+    <div class="modal__body" data-i18="modalContent">LEVEL - В данном окне вы можете оставить заявку на получение
+      подробной информации об
+      инетерсном для вас предложении
+    </div>
+    <div class="modal__footer">
+      <button class="modal__button modal__button_accept accent" data-i18="callMeModalButton">Позвонить мне</button>
+      <button class="modal__button modal__button_cancel" data-i18="cancelModalButton">Отмена</button>
+    </div>
+  </div>
+</div>
+
+<div class="menu__wrapper">
+  <div class="menu__bg"></div>
+  <div class="menu__overlay menu__overlay_top"></div>
+  <div class="menu__overlay menu__overlay_bottom"></div>
+  <div class="menu__linksWrapper">
+    <ul class="menu">
+      <div class="menu__line"></div>
+      <div class="menu__lang navAnimate">
+        <div class="active" data-lang-name="ru">
+          <a href="#" class="sidebar__langButton">ru</a>
+        </div>
+        <div class="" data-lang-name="en">
+          <a href="#" class="sidebar__langButton">en</a>
+        </div>
+      </div>
+      <a href="#" class="menu__item navAnimate active" data-i18="menuHead">Главная</a>
+      <a href="#" class="menu__item navAnimate" data-i18="menuProjects">Наши проекты</a>
+      <a href="#" class="menu__item navAnimate" data-i18="menuBuy">Купить</a>
+      <a href="#" class="menu__item navAnimate" data-i18="menuSell">Продать</a>
+      <a href="#" class="menu__item navAnimate" data-i18="menuAboutUs">О Нас</a>
+      <a href="#" class="menu__item navAnimate" data-i18="menuContacts">Контакты</a>
+    </ul>
+  </div>
+</div>
+
+<div class="scroll-wrapper" data-scroll-container>
+  <div class="scrolled">
+    <section data-scroll-section>
+      <div data-scroll-item data-speed="1.4">
+        <div class="header">
+          <div class="header__videoDecorations">
+            <div class="header__videoDecorations__wrapper">
+              <div class="header__videoDecorations__svgWrapper">
+                <div class="header__videoDecorations_left">
+                  <svg class="header__videoDecoration_record" width="32" height="14" viewBox="0 0 32 14" fill="none"
+                       xmlns="http://www.w3.org/2000/svg">
+                    <rect width="32" height="14" rx="3" fill="#B45A5A"/>
+                    <path
+                      d="M6.56934 9V4.8H7.11334V5.944L7.05734 5.744C7.17468 5.424 7.37201 5.18133 7.64934 5.016C7.92668 4.84533 8.27068 4.76 8.68134 4.76V5.312C8.66001 5.312 8.63868 5.312 8.61734 5.312C8.59601 5.30667 8.57468 5.304 8.55334 5.304C8.11068 5.304 7.76401 5.44 7.51334 5.712C7.26268 5.97867 7.13734 6.36 7.13734 6.856V9H6.56934ZM11.4627 9.04C11.0254 9.04 10.6414 8.94933 10.3107 8.768C9.98005 8.58133 9.72139 8.328 9.53472 8.008C9.34805 7.68267 9.25472 7.312 9.25472 6.896C9.25472 6.48 9.34272 6.112 9.51872 5.792C9.70005 5.472 9.94539 5.22133 10.2547 5.04C10.5694 4.85333 10.9214 4.76 11.3107 4.76C11.7054 4.76 12.0547 4.85067 12.3587 5.032C12.6681 5.208 12.9107 5.45867 13.0867 5.784C13.2627 6.104 13.3507 6.47467 13.3507 6.896C13.3507 6.92267 13.3481 6.952 13.3427 6.984C13.3427 7.01067 13.3427 7.04 13.3427 7.072H9.68672V6.648H13.0387L12.8147 6.816C12.8147 6.512 12.7481 6.24267 12.6147 6.008C12.4867 5.768 12.3107 5.58133 12.0867 5.448C11.8627 5.31467 11.6041 5.248 11.3107 5.248C11.0227 5.248 10.7641 5.31467 10.5347 5.448C10.3054 5.58133 10.1267 5.768 9.99872 6.008C9.87072 6.248 9.80672 6.52267 9.80672 6.832V6.92C9.80672 7.24 9.87605 7.52267 10.0147 7.768C10.1587 8.008 10.3561 8.19733 10.6067 8.336C10.8627 8.46933 11.1534 8.536 11.4787 8.536C11.7347 8.536 11.9721 8.49067 12.1907 8.4C12.4147 8.30933 12.6067 8.17067 12.7667 7.984L13.0867 8.352C12.9001 8.576 12.6654 8.74667 12.3827 8.864C12.1054 8.98133 11.7987 9.04 11.4627 9.04ZM16.2508 9.04C15.8348 9.04 15.4615 8.94933 15.1308 8.768C14.8055 8.58133 14.5495 8.328 14.3628 8.008C14.1762 7.68267 14.0828 7.312 14.0828 6.896C14.0828 6.47467 14.1762 6.104 14.3628 5.784C14.5495 5.464 14.8055 5.21333 15.1308 5.032C15.4615 4.85067 15.8348 4.76 16.2508 4.76C16.6082 4.76 16.9308 4.82933 17.2188 4.968C17.5068 5.10667 17.7335 5.31467 17.8988 5.592L17.4748 5.88C17.3308 5.66667 17.1522 5.50933 16.9388 5.408C16.7255 5.30667 16.4935 5.256 16.2428 5.256C15.9442 5.256 15.6748 5.32533 15.4348 5.464C15.1948 5.59733 15.0055 5.78667 14.8668 6.032C14.7282 6.27733 14.6588 6.56533 14.6588 6.896C14.6588 7.22667 14.7282 7.51467 14.8668 7.76C15.0055 8.00533 15.1948 8.19733 15.4348 8.336C15.6748 8.46933 15.9442 8.536 16.2428 8.536C16.4935 8.536 16.7255 8.48533 16.9388 8.384C17.1522 8.28267 17.3308 8.128 17.4748 7.92L17.8988 8.208C17.7335 8.48 17.5068 8.688 17.2188 8.832C16.9308 8.97067 16.6082 9.04 16.2508 9.04Z"
+                      fill="white"/>
+                    <circle class="header__videoDecoration_animate" cx="24" cy="7" r="2" fill="white"/>
+                  </svg>
+                  <div class="header__videoDecorationLeft_top header__videoDecorationLeft">
+                    <svg width="43" height="43" viewBox="0 0 43 43" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                      <path d="M43 1H1V43" stroke="white" stroke-opacity="0.5"/>
+                    </svg>
+                  </div>
+                  <div class="header__videoDecorationLeft_bottom  header__videoDecorationLeft">
+                    <svg width="43" height="43" viewBox="0 0 43 43" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                      <path d="M43 1H1V43" stroke="white" stroke-opacity="0.5"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="header__videoDecorations_right">
+                  <div class="header__videoDecorationRight_top header__videoDecorationRight">
+                    <svg width="43" height="43"
+                         viewBox="0 0 43 43" fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.43051e-06 1H42V43" stroke="white" stroke-opacity="0.5"/>
+                    </svg>
+                  </div>
+                  <div class="header__videoDecorationRight_bottom header__videoDecorationRight">
+                    <svg width="43" height="43"
+                         viewBox="0 0 43 43"
+                         fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.43051e-06 1H42V43" stroke="white" stroke-opacity="0.5"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="header__links">
+                <div class="header__links__line"></div>
+                <a href="#" data-i18="buy">купить</a>
+                <span class="header__linksDot"></span>
+                <a href="#" data-i18="sell">продать</a>
+                <span class="header__linksDot"></span>
+                <a href="#" data-i18="rent">аренда</a>
+              </div>
+            </div>
+          </div>
+          <div class="header__arrowDown">
+            <svg width="18" height="28" viewBox="0 0 18 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 12.1298V0M9 18.3287V26.5L17 18.3287M1 18.3287L5 23" stroke="white"/>
+            </svg>
+          </div>
+          <div class="header__content" data-scroll-item data-speed="-2">
+            <div class="header__middle">
+              <div class="header__logo">
+                <svg width="400" height="100" viewBox="0 0 264 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M0.149414 57.9732V0.231326H4.27384V53.8488H37.1867V57.9732H0.149414Z" fill="white"
+                  />
+                  <path
+                    d="M52.7101 57.9732V0.231326H90.5723V4.35575H57.1157V53.8488H90.5723V57.9732H52.7101Z" fill="white"
+                  />
+                  <path
+                    d="M257.085 54.3061V0.229492H261.209V57.9713H224.162V53.8469L257.085 54.3061Z" fill="white"
+                  />
+                  <path
+                    d="M127.569 57.9732L103.813 0.231385H108.35L124.352 38.671C125.122 40.5407 125.81 42.2455 126.415 43.7852C127.02 45.27 127.597 46.6998 128.147 48.0746C128.091 47.9341 129.569 51.8508 129.569 51.8508C130.119 53.2806 130.352 53.8488 130.352 53.8488C130.352 53.8488 131.089 52.1166 131.859 50.1368C132.629 48.1021 133.371 46.1774 134.086 44.3627C134.801 42.5479 135.653 40.4857 136.643 38.176L153.141 0.231385H157.678L132.766 57.9732H127.569Z"
+                    fill="url(#paint0_linear_450_1816)"/>
+                  <path d="M75.4824 26.0731V30.1975H90.5725V26.0731H75.4824Z" fill="url(#paint1_linear_450_1816)"/>
+                  <path fill="white"
+                        d="M208.783 57.9732V0.231323H170.921V4.35575H204.378V53.8488H170.921V57.9732H208.783Z"/>
+                  <path d="M186.012 26.073V30.1974H170.922V26.073H186.012Z"
+                        fill="url(#paint2_linear_450_1816)"/>
+                  <defs>
+                    <linearGradient id="paint0_linear_450_1816" x1="130.679" y1="0.229492" x2="130.679" y2="57.9732"
+                                    gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFFDE8"/>
+                      <stop offset="1" stop-color="#AA986A"/>
+                    </linearGradient>
+                    <linearGradient id="paint1_linear_450_1816" x1="83.0275" y1="26.0731" x2="83.0275" y2="30.1975"
+                                    gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFFDE8"/>
+                      <stop offset="1" stop-color="#AA986A"/>
+                    </linearGradient>
+                    <linearGradient id="paint2_linear_450_1816" x1="178.467" y1="26.073" x2="178.467" y2="30.1974"
+                                    gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#FFFDE8"/>
+                      <stop offset="1" stop-color="#AA986A"/>
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </div>
+              <h1 class="header__heading" data-i18="headerDescription">innovative real estate agency</h1>
+            </div>
+          </div>
+          <div class="header__mobileImg">
+            <img src='assets/img/mobile-header.jpg' alt="">
+          </div>
+          <div id="headerCanvas" data-horizontalThreshold="120"
+               data-verticalThreshold="50"></div>
+
+          <div class="header__overlay" id="overlay"></div>
+
+          <div class="header__contacts" data-scroll-item data-speed="-0.5" data-end="-35">
+            <a href="tel:89990037029"><span>+7 999</span> 003-70-29</a>
+            <div class="header__callButton openModal" data-i18="callMeButton">заказать звонок</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <section data-scroll-section>
+      <div class="show__wrapper">
+        <div class="carousel">
+          <div class="carousel__wrapper">
+            <div class="carousel__item">
+              <div class="carousel__imgWrapper">
+                <img src="assets/img/show_3.webp" alt="Изображение недвижимости 1">
+              </div>
+            </div>
+            <div class="carousel__item">
+              <div class="carousel__imgWrapper">
+                <img src="assets/img/show_2.webp" alt="Изображение недвижимости 1">
+              </div>
+            </div>
+            <div class="carousel__item">
+              <div class="carousel__imgWrapper">
+                <img src="assets/img/show_4.webp" alt="Изображение недвижимости 1">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel__data">
+          <div class="carousel__navWrapper">
+            <div class="carousel__arrows">
+              <a href="#" class="carousel__arrow carousel__arrow_left">
+                <svg width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.9668 15.5454L1.9668 8.5455L8.9668 1.54541" stroke="#DBDBDB" stroke-width="2"/>
+                </svg>
+              </a>
+              <a href="#" class="carousel__arrow carousel__arrow_right">
+                <svg width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.9668 15.5454L1.9668 8.5455L8.9668 1.54541" stroke="#DBDBDB" stroke-width="2"/>
+                </svg>
+              </a>
+            </div>
+            <div class="carousel__cardsWrapper">
+              <div class="carousel__cardLine"></div>
+              <div class="carousel__card active">
+                <div class="carousel__cardHeading">Sunshine Beach</div>
+                <div class="carousel__cardNumber">01</div>
+                <div class="carousel__cardAdvantages">
+                  <div>3 к</div>
+                  <div>15 мин</div>
+                  <div>300 м</div>
+                </div>
+              </div>
+              <div class="carousel__card">
+                <div class="carousel__cardHeading">Sunshine Beach</div>
+                <div class="carousel__cardNumber">02</div>
+                <div class="carousel__cardAdvantages">
+                  <div>3 к</div>
+                  <div>15 мин</div>
+                  <div>300 м</div>
+                </div>
+              </div>
+              <div class="carousel__card">
+                <div class="carousel__cardHeading">Sunshine Beach</div>
+                <div class="carousel__cardNumber">03</div>
+                <div class="carousel__cardAdvantages">
+                  <div>3 к</div>
+                  <div>15 мин</div>
+                  <div>300 м</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel__info">
+            <div class="carousel__infoLine"
+                 data-scroll-item
+                 data-speed="-0.65"
+                 data-opacity
+                 data-direction="horizontal"
+                 data-start="-40"
+                 data-end-to-end
+                 data-alternative
+                 data-end="-110"></div>
+            <div class="carousel__infoWrapper"
+                 data-scroll-item
+                 data-start="-30"
+                 data-speed="-0.15"
+                 data-opacity
+                 data-end-to-end
+                 data-alternative
+                 data-direction="horizontal"
+                 data-end="-100"
+            >
+              <div class="carousel__infoItem">
+                <div class="carousel__infoLogo">
+                  <img src="assets/svg/sunshine%20logo.png" alt="">
+                </div>
+                <div class="carousel__infoHeader">
+                  <h3 class="carousel__infoHeading" data-i18="twoRoomsApartmentsPhuket">
+                    2-ух комнатная квартира в Централ-Пхукет
+                  </h3>
+                  <div class="carousel__infoReviews">12 <span data-i18="reviews">отзывов</span></div>
+                </div>
+
+                <div class="carousel__advantages">
+                  <div class="carousel__advantage">
+                    <div class="carousel__advantageLeft">
+                      <svg width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M15.5502 0.46759V1.73113H15.0806V0.46759H15.5502ZM15.5502 4.25822V6.78531H15.0806V4.25822H15.5502ZM15.5502 9.3124V11.8395H15.0806V9.3124H15.5502ZM15.5502 14.3666V15.8725H14.1154V15.3877H15.0806V14.3666H15.5502ZM2.11457 15.8725H0.91449V15.3877H2.11457V15.8725ZM6.91489 15.8725H4.51473V15.3877H6.91489V15.8725ZM11.7152 15.8725H9.31505V15.3877H11.7152V15.8725Z"
+                              fill="url(#paint0_linear_520_102)"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M0.679688 0.225159H15.3154V0.710007H1.14928V15.6301H0.679688V0.225159Z"
+                              fill="url(#paint1_linear_520_102)"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M19.4835 0.710007H17.6064V0.225159H22.5159V0.710007H20.6388L22.6797 2.76223L22.352 3.10957L20.296 1.04208V15.4646L22.3654 13.6809L22.6663 14.0531L20.7088 15.7403H22.5159V16.2252H17.6064V15.7403H19.4135L17.456 14.0531L17.7569 13.6809L19.8264 15.4646V1.04208L17.7703 3.10957L17.4426 2.76223L19.4835 0.710007Z"
+                              fill="url(#paint2_linear_520_102)"/>
+                        <defs>
+                          <linearGradient id="paint0_linear_520_102" x1="8.23237" y1="0.46759" x2="8.23237" y2="15.8725"
+                                          gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#DDD7A0"/>
+                            <stop offset="1" stop-color="#AA986A"/>
+                          </linearGradient>
+                          <linearGradient id="paint1_linear_520_102" x1="7.99757" y1="0.225159" x2="7.99757"
+                                          y2="15.6301"
+                                          gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#DDD7A0"/>
+                            <stop offset="1" stop-color="#AA986A"/>
+                          </linearGradient>
+                          <linearGradient id="paint2_linear_520_102" x1="20.0612" y1="0.225159" x2="20.0612"
+                                          y2="16.2252"
+                                          gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#DDD7A0"/>
+                            <stop offset="1" stop-color="#AA986A"/>
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                    <div class="carousel__advantageRight">
+                      400 метров
+                    </div>
+                  </div>
+                  <div class="carousel__advantage">
+                    <div class="carousel__advantageLeft">
+                      <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M0.679688 0.561096H9.21302V9.09443H0.679688V0.561096ZM1.21302 1.09443V8.5611H8.67969V1.09443H1.21302Z"
+                              fill="url(#paint0_linear_520_101)"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M9.21302 16.5611H0.679688V8.5611H1.21302V16.0278H8.67969V8.5611H9.21302V16.5611Z"
+                              fill="url(#paint1_linear_520_101)"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M16.6797 0.561096V9.09443H8.67969V8.5611H16.1464V1.09443H8.67969V0.561096H16.6797Z"
+                              fill="url(#paint2_linear_520_101)"/>
+                        <defs>
+                          <linearGradient id="paint0_linear_520_101" x1="8.67969" y1="0.561096" x2="8.67969"
+                                          y2="16.5611"
+                                          gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#DDD7A0"/>
+                            <stop offset="1" stop-color="#AA986A"/>
+                          </linearGradient>
+                          <linearGradient id="paint1_linear_520_101" x1="8.67969" y1="0.561096" x2="8.67969"
+                                          y2="16.5611"
+                                          gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#DDD7A0"/>
+                            <stop offset="1" stop-color="#AA986A"/>
+                          </linearGradient>
+                          <linearGradient id="paint2_linear_520_101" x1="8.67969" y1="0.561096" x2="8.67969"
+                                          y2="16.5611"
+                                          gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#DDD7A0"/>
+                            <stop offset="1" stop-color="#AA986A"/>
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                    <div class="carousel__advantageRight">3 комнаты</div>
+                  </div>
+                  <div class="carousel__advantage">
+                    <div class="carousel__advantageLeft">
+                      <svg width="15" height="17" viewBox="0 0 15 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M4.67969 13.2252C1.96664 13.2252 1.0565 15.5919 0.679688 16.7252H10.2884C9.83089 15.8079 8.21694 14.0825 6.17969 13.4582M4.67969 13.2252C5.19678 13.2252 5.69997 13.3111 6.17969 13.4582M4.67969 13.2252C4.83908 10.8283 6.07437 6.15739 8.36772 3.40339M9.72483 2.11552C6.89875 4.38202 9.15795 7.6594 9.15795 7.6594C9.15795 7.6594 9.8721 5.80362 10.0654 4.19029M9.72483 2.11552C10.122 2.51367 10.1701 3.31641 10.0654 4.19029M9.72483 2.11552C9.72483 2.61521 9.81242 3.37752 10.0654 4.19029M9.72483 2.11552C10.1443 2.11552 10.4859 2.28687 10.7641 2.56598M9.72483 2.11552C9.88723 2.27831 10.2828 2.43101 10.7641 2.56598M9.72483 2.11552C11.9857 0.98229 13.6797 3.12644 13.6797 3.12644C13.6797 3.12644 11.958 2.90076 10.7641 2.56598M9.72483 2.11552C10.4785 1.54892 11.7579 1.31256 10.8536 0.859271C9.94925 0.40598 9.72483 1.17118 9.72483 2.11552ZM9.72483 2.11552C9.72483 1.73781 9.03928 0.413749 8.02751 1.42665C7.4623 1.9925 7.08548 2.74869 7.4623 3.12644L9.72483 2.11552ZM9.72483 2.11552C9.23749 2.46448 8.78509 2.90219 8.36772 3.40339M10.0654 4.19029C10.3862 5.22082 10.9728 6.33247 11.984 7.09273C11.984 7.09273 11.9851 3.79116 10.7641 2.56598M6.17969 13.4582C5.70359 11.743 5.47467 7.33082 8.36772 3.40339M11.2325 9.67343C10.8104 9.80692 10.4931 10.0013 10.2562 10.229M11.2325 9.67343C11.3984 9.99772 11.26 10.4838 11.0106 10.9779M11.2325 9.67343C11.1276 9.96931 11.0224 10.4402 11.0106 10.9779M11.2325 9.67343C11.4961 9.76694 11.6747 9.94455 11.7909 10.1718M11.2325 9.67343C11.3004 9.80602 11.5168 9.98462 11.7909 10.1718M11.2325 9.67343C12.8911 9.50641 13.505 11.1536 13.505 11.1536C13.505 11.1536 12.4707 10.6362 11.7909 10.1718M11.2325 9.67343C11.8251 9.50593 12.6786 9.6512 12.2057 9.1812C11.7327 8.7112 11.4309 9.11426 11.2325 9.67343ZM11.2325 9.67343C11.3119 9.44978 11.1593 8.51295 10.3109 8.88717C9.83685 9.09622 9.44124 9.45999 9.59863 9.76766L11.2325 9.67343ZM11.2325 9.67343C10.853 9.77142 10.4768 9.92975 10.1093 10.1335M11.2325 9.67343C10.8691 9.83183 10.5457 10.0193 10.2562 10.229M11.2325 9.67343C9.96897 9.99741 8.05008 10.1398 6.67963 13.7252C7.00451 13.8404 7.40925 14.0315 7.67976 14.2255C8.19851 12.9099 8.79607 11.2866 10.2562 10.229M10.2562 10.229C9.22913 11.216 9.71169 12.8297 9.71169 12.8297C9.71169 12.8297 10.5503 11.8901 11.0106 10.9779M11.0106 10.9779C10.9957 11.6596 11.1307 12.4486 11.6063 13.1242C11.6063 13.1242 12.3007 11.1695 11.7909 10.1718"
+                          stroke="url(#paint0_linear_520_104)" stroke-width="0.5"/>
+                        <defs>
+                          <linearGradient id="paint0_linear_520_104" x1="7.17969" y1="0.725159" x2="7.17969"
+                                          y2="16.7252"
+                                          gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#E8DDB8"/>
+                            <stop offset="1" stop-color="#B8B599"/>
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                    <div class="carousel__advantageRight">15 минут</div>
+                  </div>
+                  <div class="carousel__advantage">
+                    <div class="carousel__advantageLeft">
+                      <svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M4.34635 8.40547L0.679688 6.74153L7.27969 4.05336L11.6797 2.3895L22.6797 6.74153L19.013 8.40547M4.34635 8.40547L11.6797 11.7333L19.013 8.40547M4.34635 8.40547V15.0612C4.5908 15.6159 6.39969 16.7252 11.6797 16.7252C16.9597 16.7252 19.013 15.6159 19.013 15.0612V8.40547M11.6797 0.725396L7.27969 2.38926L0.679688 5.07743L4.34635 6.74137L11.6797 10.0692L18.2797 7.07416L22.6797 5.07743L11.6797 0.725396Z"
+                          stroke="url(#paint0_linear_520_103)" stroke-width="0.5"/>
+                        <defs>
+                          <linearGradient id="paint0_linear_520_103" x1="11.6797" y1="0.725159" x2="11.6797"
+                                          y2="16.7252"
+                                          gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#E8DDB8"/>
+                            <stop offset="1" stop-color="#B8B599"/>
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                    <div class="carousel__advantageRight">3 школы</div>
+                  </div>
+                </div>
+                <div class="carousel__actionWrapper">
+                  <div class="carousel__price">99.000.000 <span>$</span></div>
+
+                  <button class="carousel__infoButton openModal">
+                    <span data-i18="showRequestForCall">Оставить заявку</span>
+                  </button>
+                </div>
+              </div>
+              <div class="carousel__infoItem">
+                <div class="carousel__infoLogo">
+                  <img src="assets/svg/sunshine%20logo.png" alt="">
+                </div>
+                <div class="carousel__infoHeader">
+                  <h3 class="carousel__infoHeading" data-i18="threeRoomsApartmentsSunshine">
+                    3-ех комнатная квартира в Sunshine Beach
+                  </h3>
+                </div>
+
+                <div class="carousel__advantages">
+                  <div class="carousel__advantage">
+                    <div class="carousel__advantageLeft">
+                      <svg width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M15.5502 0.46759V1.73113H15.0806V0.46759H15.5502ZM15.5502 4.25822V6.78531H15.0806V4.25822H15.5502ZM15.5502 9.3124V11.8395H15.0806V9.3124H15.5502ZM15.5502 14.3666V15.8725H14.1154V15.3877H15.0806V14.3666H15.5502ZM2.11457 15.8725H0.91449V15.3877H2.11457V15.8725ZM6.91489 15.8725H4.51473V15.3877H6.91489V15.8725ZM11.7152 15.8725H9.31505V15.3877H11.7152V15.8725Z"
+                              fill="url(#paint0_linear_520_102)"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M0.679688 0.225159H15.3154V0.710007H1.14928V15.6301H0.679688V0.225159Z"
+                              fill="url(#paint1_linear_520_102)"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M19.4835 0.710007H17.6064V0.225159H22.5159V0.710007H20.6388L22.6797 2.76223L22.352 3.10957L20.296 1.04208V15.4646L22.3654 13.6809L22.6663 14.0531L20.7088 15.7403H22.5159V16.2252H17.6064V15.7403H19.4135L17.456 14.0531L17.7569 13.6809L19.8264 15.4646V1.04208L17.7703 3.10957L17.4426 2.76223L19.4835 0.710007Z"
+                              fill="url(#paint2_linear_520_102)"/>
+                        <defs>
+                          <linearGradient id="paint0_linear_520_102" x1="8.23237" y1="0.46759" x2="8.23237" y2="15.8725"
+                                          gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#DDD7A0"/>
+                            <stop offset="1" stop-color="#AA986A"/>
+                          </linearGradient>
+                          <linearGradient id="paint1_linear_520_102" x1="7.99757" y1="0.225159" x2="7.99757"
+                                          y2="15.6301"
+                                          gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#DDD7A0"/>
+                            <stop offset="1" stop-color="#AA986A"/>
+                          </linearGradient>
+                          <linearGradient id="paint2_linear_520_102" x1="20.0612" y1="0.225159" x2="20.0612"
+                                          y2="16.2252"
+                                          gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#DDD7A0"/>
+                            <stop offset="1" stop-color="#AA986A"/>
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                    <div class="carousel__advantageRight">
+                      450 метров
+                    </div>
+                  </div>
+                  <div class="carousel__advantage">
+                    <div class="carousel__advantageLeft">
+                      <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M0.679688 0.561096H9.21302V9.09443H0.679688V0.561096ZM1.21302 1.09443V8.5611H8.67969V1.09443H1.21302Z"
+                              fill="url(#paint0_linear_520_101)"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M9.21302 16.5611H0.679688V8.5611H1.21302V16.0278H8.67969V8.5611H9.21302V16.5611Z"
+                              fill="url(#paint1_linear_520_101)"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M16.6797 0.561096V9.09443H8.67969V8.5611H16.1464V1.09443H8.67969V0.561096H16.6797Z"
+                              fill="url(#paint2_linear_520_101)"/>
+                        <defs>
+                          <linearGradient id="paint0_linear_520_101" x1="8.67969" y1="0.561096" x2="8.67969"
+                                          y2="16.5611"
+                                          gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#DDD7A0"/>
+                            <stop offset="1" stop-color="#AA986A"/>
+                          </linearGradient>
+                          <linearGradient id="paint1_linear_520_101" x1="8.67969" y1="0.561096" x2="8.67969"
+                                          y2="16.5611"
+                                          gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#DDD7A0"/>
+                            <stop offset="1" stop-color="#AA986A"/>
+                          </linearGradient>
+                          <linearGradient id="paint2_linear_520_101" x1="8.67969" y1="0.561096" x2="8.67969"
+                                          y2="16.5611"
+                                          gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#DDD7A0"/>
+                            <stop offset="1" stop-color="#AA986A"/>
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                    <div class="carousel__advantageRight">3 комнаты</div>
+                  </div>
+                  <div class="carousel__advantage">
+                    <div class="carousel__advantageLeft">
+                      <svg width="15" height="17" viewBox="0 0 15 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M4.67969 13.2252C1.96664 13.2252 1.0565 15.5919 0.679688 16.7252H10.2884C9.83089 15.8079 8.21694 14.0825 6.17969 13.4582M4.67969 13.2252C5.19678 13.2252 5.69997 13.3111 6.17969 13.4582M4.67969 13.2252C4.83908 10.8283 6.07437 6.15739 8.36772 3.40339M9.72483 2.11552C6.89875 4.38202 9.15795 7.6594 9.15795 7.6594C9.15795 7.6594 9.8721 5.80362 10.0654 4.19029M9.72483 2.11552C10.122 2.51367 10.1701 3.31641 10.0654 4.19029M9.72483 2.11552C9.72483 2.61521 9.81242 3.37752 10.0654 4.19029M9.72483 2.11552C10.1443 2.11552 10.4859 2.28687 10.7641 2.56598M9.72483 2.11552C9.88723 2.27831 10.2828 2.43101 10.7641 2.56598M9.72483 2.11552C11.9857 0.98229 13.6797 3.12644 13.6797 3.12644C13.6797 3.12644 11.958 2.90076 10.7641 2.56598M9.72483 2.11552C10.4785 1.54892 11.7579 1.31256 10.8536 0.859271C9.94925 0.40598 9.72483 1.17118 9.72483 2.11552ZM9.72483 2.11552C9.72483 1.73781 9.03928 0.413749 8.02751 1.42665C7.4623 1.9925 7.08548 2.74869 7.4623 3.12644L9.72483 2.11552ZM9.72483 2.11552C9.23749 2.46448 8.78509 2.90219 8.36772 3.40339M10.0654 4.19029C10.3862 5.22082 10.9728 6.33247 11.984 7.09273C11.984 7.09273 11.9851 3.79116 10.7641 2.56598M6.17969 13.4582C5.70359 11.743 5.47467 7.33082 8.36772 3.40339M11.2325 9.67343C10.8104 9.80692 10.4931 10.0013 10.2562 10.229M11.2325 9.67343C11.3984 9.99772 11.26 10.4838 11.0106 10.9779M11.2325 9.67343C11.1276 9.96931 11.0224 10.4402 11.0106 10.9779M11.2325 9.67343C11.4961 9.76694 11.6747 9.94455 11.7909 10.1718M11.2325 9.67343C11.3004 9.80602 11.5168 9.98462 11.7909 10.1718M11.2325 9.67343C12.8911 9.50641 13.505 11.1536 13.505 11.1536C13.505 11.1536 12.4707 10.6362 11.7909 10.1718M11.2325 9.67343C11.8251 9.50593 12.6786 9.6512 12.2057 9.1812C11.7327 8.7112 11.4309 9.11426 11.2325 9.67343ZM11.2325 9.67343C11.3119 9.44978 11.1593 8.51295 10.3109 8.88717C9.83685 9.09622 9.44124 9.45999 9.59863 9.76766L11.2325 9.67343ZM11.2325 9.67343C10.853 9.77142 10.4768 9.92975 10.1093 10.1335M11.2325 9.67343C10.8691 9.83183 10.5457 10.0193 10.2562 10.229M11.2325 9.67343C9.96897 9.99741 8.05008 10.1398 6.67963 13.7252C7.00451 13.8404 7.40925 14.0315 7.67976 14.2255C8.19851 12.9099 8.79607 11.2866 10.2562 10.229M10.2562 10.229C9.22913 11.216 9.71169 12.8297 9.71169 12.8297C9.71169 12.8297 10.5503 11.8901 11.0106 10.9779M11.0106 10.9779C10.9957 11.6596 11.1307 12.4486 11.6063 13.1242C11.6063 13.1242 12.3007 11.1695 11.7909 10.1718"
+                          stroke="url(#paint0_linear_520_104)" stroke-width="0.5"/>
+                        <defs>
+                          <linearGradient id="paint0_linear_520_104" x1="7.17969" y1="0.725159" x2="7.17969"
+                                          y2="16.7252"
+                                          gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#E8DDB8"/>
+                            <stop offset="1" stop-color="#B8B599"/>
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                    <div class="carousel__advantageRight">10 минут</div>
+                  </div>
+                  <div class="carousel__advantage">
+                    <div class="carousel__advantageLeft">
+                      <svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M4.34635 8.40547L0.679688 6.74153L7.27969 4.05336L11.6797 2.3895L22.6797 6.74153L19.013 8.40547M4.34635 8.40547L11.6797 11.7333L19.013 8.40547M4.34635 8.40547V15.0612C4.5908 15.6159 6.39969 16.7252 11.6797 16.7252C16.9597 16.7252 19.013 15.6159 19.013 15.0612V8.40547M11.6797 0.725396L7.27969 2.38926L0.679688 5.07743L4.34635 6.74137L11.6797 10.0692L18.2797 7.07416L22.6797 5.07743L11.6797 0.725396Z"
+                          stroke="url(#paint0_linear_520_103)" stroke-width="0.5"/>
+                        <defs>
+                          <linearGradient id="paint0_linear_520_103" x1="11.6797" y1="0.725159" x2="11.6797"
+                                          y2="16.7252"
+                                          gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#E8DDB8"/>
+                            <stop offset="1" stop-color="#B8B599"/>
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                    <div class="carousel__advantageRight">1 школы</div>
+                  </div>
+                </div>
+
+                <div class="carousel__actionWrapper">
+                  <div class="carousel__price">2.000.000 <span>$</span></div>
+
+                  <button class="carousel__infoButton openModal">
+                    <span data-i18="showRequestForCall">Оставить заявку</span>
+                  </button>
+                </div>
+              </div>
+              <div class="carousel__infoItem">
+                <div class="carousel__infoLogo">
+                  <img src="assets/svg/sunshine%20logo.png" alt="">
+                </div>
+                <div class="carousel__infoHeader">
+                  <h3 class="carousel__infoHeading" data-i18="LandLagunaHomes">
+                    Земельный участок в Laguna Homes
+                  </h3>
+                  <div class="carousel__infoReviews">48 <span data-i18="reviews">отзывов</span></div>
+                </div>
+
+                <div class="carousel__advantages">
+                  <div class="carousel__advantage">
+                    <div class="carousel__advantageLeft">
+                      <svg width="23" height="17" viewBox="0 0 23 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M15.5502 0.46759V1.73113H15.0806V0.46759H15.5502ZM15.5502 4.25822V6.78531H15.0806V4.25822H15.5502ZM15.5502 9.3124V11.8395H15.0806V9.3124H15.5502ZM15.5502 14.3666V15.8725H14.1154V15.3877H15.0806V14.3666H15.5502ZM2.11457 15.8725H0.91449V15.3877H2.11457V15.8725ZM6.91489 15.8725H4.51473V15.3877H6.91489V15.8725ZM11.7152 15.8725H9.31505V15.3877H11.7152V15.8725Z"
+                              fill="url(#paint0_linear_520_102)"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M0.679688 0.225159H15.3154V0.710007H1.14928V15.6301H0.679688V0.225159Z"
+                              fill="url(#paint1_linear_520_102)"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M19.4835 0.710007H17.6064V0.225159H22.5159V0.710007H20.6388L22.6797 2.76223L22.352 3.10957L20.296 1.04208V15.4646L22.3654 13.6809L22.6663 14.0531L20.7088 15.7403H22.5159V16.2252H17.6064V15.7403H19.4135L17.456 14.0531L17.7569 13.6809L19.8264 15.4646V1.04208L17.7703 3.10957L17.4426 2.76223L19.4835 0.710007Z"
+                              fill="url(#paint2_linear_520_102)"/>
+                        <defs>
+                          <linearGradient id="paint0_linear_520_102" x1="8.23237" y1="0.46759" x2="8.23237" y2="15.8725"
+                                          gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#DDD7A0"/>
+                            <stop offset="1" stop-color="#AA986A"/>
+                          </linearGradient>
+                          <linearGradient id="paint1_linear_520_102" x1="7.99757" y1="0.225159" x2="7.99757"
+                                          y2="15.6301"
+                                          gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#DDD7A0"/>
+                            <stop offset="1" stop-color="#AA986A"/>
+                          </linearGradient>
+                          <linearGradient id="paint2_linear_520_102" x1="20.0612" y1="0.225159" x2="20.0612"
+                                          y2="16.2252"
+                                          gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#DDD7A0"/>
+                            <stop offset="1" stop-color="#AA986A"/>
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                    <div class="carousel__advantageRight">
+                      400 метров
+                    </div>
+                  </div>
+                  <div class="carousel__advantage">
+                    <div class="carousel__advantageLeft">
+                      <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M0.679688 0.561096H9.21302V9.09443H0.679688V0.561096ZM1.21302 1.09443V8.5611H8.67969V1.09443H1.21302Z"
+                              fill="url(#paint0_linear_520_101)"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M9.21302 16.5611H0.679688V8.5611H1.21302V16.0278H8.67969V8.5611H9.21302V16.5611Z"
+                              fill="url(#paint1_linear_520_101)"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M16.6797 0.561096V9.09443H8.67969V8.5611H16.1464V1.09443H8.67969V0.561096H16.6797Z"
+                              fill="url(#paint2_linear_520_101)"/>
+                        <defs>
+                          <linearGradient id="paint0_linear_520_101" x1="8.67969" y1="0.561096" x2="8.67969"
+                                          y2="16.5611"
+                                          gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#DDD7A0"/>
+                            <stop offset="1" stop-color="#AA986A"/>
+                          </linearGradient>
+                          <linearGradient id="paint1_linear_520_101" x1="8.67969" y1="0.561096" x2="8.67969"
+                                          y2="16.5611"
+                                          gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#DDD7A0"/>
+                            <stop offset="1" stop-color="#AA986A"/>
+                          </linearGradient>
+                          <linearGradient id="paint2_linear_520_101" x1="8.67969" y1="0.561096" x2="8.67969"
+                                          y2="16.5611"
+                                          gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#DDD7A0"/>
+                            <stop offset="1" stop-color="#AA986A"/>
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                    <div class="carousel__advantageRight">3 комнаты</div>
+                  </div>
+                  <div class="carousel__advantage">
+                    <div class="carousel__advantageLeft">
+                      <svg width="15" height="17" viewBox="0 0 15 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M4.67969 13.2252C1.96664 13.2252 1.0565 15.5919 0.679688 16.7252H10.2884C9.83089 15.8079 8.21694 14.0825 6.17969 13.4582M4.67969 13.2252C5.19678 13.2252 5.69997 13.3111 6.17969 13.4582M4.67969 13.2252C4.83908 10.8283 6.07437 6.15739 8.36772 3.40339M9.72483 2.11552C6.89875 4.38202 9.15795 7.6594 9.15795 7.6594C9.15795 7.6594 9.8721 5.80362 10.0654 4.19029M9.72483 2.11552C10.122 2.51367 10.1701 3.31641 10.0654 4.19029M9.72483 2.11552C9.72483 2.61521 9.81242 3.37752 10.0654 4.19029M9.72483 2.11552C10.1443 2.11552 10.4859 2.28687 10.7641 2.56598M9.72483 2.11552C9.88723 2.27831 10.2828 2.43101 10.7641 2.56598M9.72483 2.11552C11.9857 0.98229 13.6797 3.12644 13.6797 3.12644C13.6797 3.12644 11.958 2.90076 10.7641 2.56598M9.72483 2.11552C10.4785 1.54892 11.7579 1.31256 10.8536 0.859271C9.94925 0.40598 9.72483 1.17118 9.72483 2.11552ZM9.72483 2.11552C9.72483 1.73781 9.03928 0.413749 8.02751 1.42665C7.4623 1.9925 7.08548 2.74869 7.4623 3.12644L9.72483 2.11552ZM9.72483 2.11552C9.23749 2.46448 8.78509 2.90219 8.36772 3.40339M10.0654 4.19029C10.3862 5.22082 10.9728 6.33247 11.984 7.09273C11.984 7.09273 11.9851 3.79116 10.7641 2.56598M6.17969 13.4582C5.70359 11.743 5.47467 7.33082 8.36772 3.40339M11.2325 9.67343C10.8104 9.80692 10.4931 10.0013 10.2562 10.229M11.2325 9.67343C11.3984 9.99772 11.26 10.4838 11.0106 10.9779M11.2325 9.67343C11.1276 9.96931 11.0224 10.4402 11.0106 10.9779M11.2325 9.67343C11.4961 9.76694 11.6747 9.94455 11.7909 10.1718M11.2325 9.67343C11.3004 9.80602 11.5168 9.98462 11.7909 10.1718M11.2325 9.67343C12.8911 9.50641 13.505 11.1536 13.505 11.1536C13.505 11.1536 12.4707 10.6362 11.7909 10.1718M11.2325 9.67343C11.8251 9.50593 12.6786 9.6512 12.2057 9.1812C11.7327 8.7112 11.4309 9.11426 11.2325 9.67343ZM11.2325 9.67343C11.3119 9.44978 11.1593 8.51295 10.3109 8.88717C9.83685 9.09622 9.44124 9.45999 9.59863 9.76766L11.2325 9.67343ZM11.2325 9.67343C10.853 9.77142 10.4768 9.92975 10.1093 10.1335M11.2325 9.67343C10.8691 9.83183 10.5457 10.0193 10.2562 10.229M11.2325 9.67343C9.96897 9.99741 8.05008 10.1398 6.67963 13.7252C7.00451 13.8404 7.40925 14.0315 7.67976 14.2255C8.19851 12.9099 8.79607 11.2866 10.2562 10.229M10.2562 10.229C9.22913 11.216 9.71169 12.8297 9.71169 12.8297C9.71169 12.8297 10.5503 11.8901 11.0106 10.9779M11.0106 10.9779C10.9957 11.6596 11.1307 12.4486 11.6063 13.1242C11.6063 13.1242 12.3007 11.1695 11.7909 10.1718"
+                          stroke="url(#paint0_linear_520_104)" stroke-width="0.5"/>
+                        <defs>
+                          <linearGradient id="paint0_linear_520_104" x1="7.17969" y1="0.725159" x2="7.17969"
+                                          y2="16.7252"
+                                          gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#E8DDB8"/>
+                            <stop offset="1" stop-color="#B8B599"/>
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                    <div class="carousel__advantageRight">10 минут</div>
+                  </div>
+                  <div class="carousel__advantage">
+                    <div class="carousel__advantageLeft">
+                      <svg width="24" height="17" viewBox="0 0 24 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M4.34635 8.40547L0.679688 6.74153L7.27969 4.05336L11.6797 2.3895L22.6797 6.74153L19.013 8.40547M4.34635 8.40547L11.6797 11.7333L19.013 8.40547M4.34635 8.40547V15.0612C4.5908 15.6159 6.39969 16.7252 11.6797 16.7252C16.9597 16.7252 19.013 15.6159 19.013 15.0612V8.40547M11.6797 0.725396L7.27969 2.38926L0.679688 5.07743L4.34635 6.74137L11.6797 10.0692L18.2797 7.07416L22.6797 5.07743L11.6797 0.725396Z"
+                          stroke="url(#paint0_linear_520_103)" stroke-width="0.5"/>
+                        <defs>
+                          <linearGradient id="paint0_linear_520_103" x1="11.6797" y1="0.725159" x2="11.6797"
+                                          y2="16.7252"
+                                          gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#E8DDB8"/>
+                            <stop offset="1" stop-color="#B8B599"/>
+                          </linearGradient>
+                        </defs>
+                      </svg>
+                    </div>
+                    <div class="carousel__advantageRight">2 школы</div>
+                  </div>
+                </div>
+
+                <div class="carousel__actionWrapper">
+                  <div class="carousel__price">1.000.000 <span>$</span></div>
+
+                  <button class="carousel__infoButton openModal">
+                    <span data-i18="showRequestForCall">Оставить заявку</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script type="module" src="/src/ts/index.ts"></script>
+</body>
+
+</html>
