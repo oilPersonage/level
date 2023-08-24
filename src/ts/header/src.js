@@ -5,6 +5,9 @@ const videoDecorations = document.querySelector(
   ".header__videoDecorations__wrapper"
 );
 
+import img from "../../../assets/img/header.webp";
+import mask from "../../../assets/img/depth2.png";
+
 import GyroNorm from "gyronorm/dist/gyronorm.complete.min.js";
 import introAnimate from "@src/ts/header/introAnimate.js";
 
@@ -27,8 +30,8 @@ export default class Sketch {
     this.mouseTargetX = 0;
     this.mouseTargetY = 0;
 
-    this.imageOriginal = "assets/img/header.webp";
-    this.imageDepth = "assets/img/depth.jpg";
+    this.imageOriginal = img;
+    this.imageDepth = mask;
     this.vth = this.container.getAttribute("data-verticalThreshold");
     this.hth = this.container.getAttribute("data-horizontalThreshold");
     this.imageURLs = [this.imageOriginal, this.imageDepth];

@@ -13,7 +13,6 @@ export default defineConfig({
     // Leave minification up to applications.
     minify: false,
   },
-  assetsInclude: ["**/*.jpg", "**/*.webp"],
   plugins: [
     glsl(),
     dts({
