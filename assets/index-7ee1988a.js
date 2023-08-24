@@ -270,6 +270,10 @@ var fragment_default="#ifdef GL_ES\n  precision mediump float;\n#endif\n\nunifor
 
 var vertex_default="attribute vec2 a_position;\n\nvoid main() {\n  gl_Position = vec4( a_position, 0, 1 );\n}";
 
+const img = "/level/assets/header-51e4f5bd.webp";
+
+const mask = "/level/assets/depth2-79995367.png";
+
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
 function getDefaultExportFromCjs (x) {
@@ -1705,8 +1709,8 @@ class Sketch {
     this.mouseTargetX = 0;
     this.mouseTargetY = 0;
 
-    this.imageOriginal = "assets/img/header.webp";
-    this.imageDepth = "assets/img/depth.jpg";
+    this.imageOriginal = img;
+    this.imageDepth = mask;
     this.vth = this.container.getAttribute("data-verticalThreshold");
     this.hth = this.container.getAttribute("data-horizontalThreshold");
     this.imageURLs = [this.imageOriginal, this.imageDepth];
@@ -2255,4 +2259,4 @@ function arrowOnClick(nextIndex) {
 }
 prevNav.onclick = () => arrowOnClick(prevActiveIndex - 1);
 nextNav.onclick = () => arrowOnClick(prevActiveIndex + 1);
-//# sourceMappingURL=index-dbde985e.js.map
+//# sourceMappingURL=index-7ee1988a.js.map
