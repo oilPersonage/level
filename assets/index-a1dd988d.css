@@ -1,10 +1,23 @@
 @font-face {
-  font-family: "Micra";
-  src: url("/level/assets/Micra Normal-5b20d63d.ttf");
+  font-family: "Micra Normal";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("public/fonts/Micra Normal.ttf") format("truetype");
 }
 @font-face {
-  font-family: "Vonique";
-  src: url("../../assets/fonts/Vonique 43.ttf");
+  font-family: "Micra Bold";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("public/fonts/Micra Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Vonique 43";
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url("public/fonts/Vonique 43.otf") format("truetype");
 }
 * {
   box-sizing: border-box;
