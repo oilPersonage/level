@@ -3,21 +3,21 @@
   font-style: normal;
   font-weight: 100;
   font-display: swap;
-  src: url("public/fonts/Micra Normal.ttf") format("truetype");
+  src: url("/level/assets/Micra Normal-5b20d63d.ttf") format("truetype");
 }
 @font-face {
   font-family: "Micra Bold";
   font-style: normal;
   font-weight: 100;
   font-display: swap;
-  src: url("fonts/Micra Bold.ttf") format("truetype");
+  src: url("/level/assets/Micra Bold-60b8576e.ttf") format("truetype");
 }
 @font-face {
   font-family: "Vonique 43";
   font-style: normal;
   font-weight: 100;
   font-display: swap;
-  src: url("fonts/Vonique 43.otf") format("truetype");
+  src: url("/level/assets/Vonique 43-35ba03af.otf") format("truetype");
 }
 * {
   box-sizing: border-box;
