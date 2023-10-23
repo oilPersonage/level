@@ -37,7 +37,6 @@ input:hover, input:focus-visible, textarea:hover, textarea:focus-visible {
   font-family: Prata, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color-scheme: light dark;
   background: #0F0F0F;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -131,12 +130,6 @@ body {
 }
 .scroll-wrapper.allowScroll {
   overflow-y: scroll;
-}
-section:nth-child(2n) {
-  background: #213547;
-}
-section:nth-child(2n-1) {
-  background: #2f2147;
 }
 @keyframes dash {
   0% {
@@ -927,15 +920,6 @@ section:nth-child(2n-1) {
 }
 .carousel__price span {
   font-size: 0.6em;
-}
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
 }
 @media screen and (max-width: 900px) {
   html {

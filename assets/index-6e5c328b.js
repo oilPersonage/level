@@ -225,12 +225,8 @@ function clamp(val, min = 0, max = 3) {
 function animate$1() {
   animateItems.forEach((item) => {
     const { direction, elem, opacity, endToEnd, speed, isInertia } = item;
-    if (isInertia) {
-      const nProgress = (item.nextProgress - item.progress) * INERTIA;
-      item.progress += clamp(nProgress, -1, 1);
-    } else {
-      item.progress = item.nextProgress;
-    }
+    const nProgress = (item.nextProgress - item.progress) * INERTIA;
+    item.progress += clamp(nProgress, -1, 1);
     if (opacity) {
       elem.style.opacity = String(item.progress * 10 * 1.9);
     }
@@ -2237,4 +2233,4 @@ function arrowOnClick(nextIndex) {
 }
 prevNav.onclick = () => arrowOnClick(prevActiveIndex - 1);
 nextNav.onclick = () => arrowOnClick(prevActiveIndex + 1);
-//# sourceMappingURL=index-73613e36.js.map
+//# sourceMappingURL=index-6e5c328b.js.map
