@@ -80,7 +80,7 @@ h2 {
   color: white;
 }
 section {
-  min-height: 100vh;
+  min-height: 100svh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -125,7 +125,7 @@ body {
   overflow: hidden;
 }
 .scroll-wrapper {
-  max-height: 100vh;
+  max-height: 100svh;
   overflow-y: hidden;
   overflow-x: hidden;
 }
@@ -230,7 +230,8 @@ section:nth-child(2n-1) {
   bottom: 0;
 }
 .header {
-  height: 100vh;
+  min-height: 100svh;
+  max-height: 100svh;
   width: 100vw;
 }
 .header__overlay {
@@ -250,7 +251,7 @@ section:nth-child(2n-1) {
 }
 .header__mobileImg {
   display: none;
-  height: 100%;
+  height: 100svh;
 }
 .header__links {
   position: relative;
@@ -555,7 +556,7 @@ section:nth-child(2n-1) {
   top: 0;
   width: 100vw;
   position: fixed;
-  height: 100vh;
+  height: 100svh;
   z-index: 6;
   align-items: center;
   justify-content: center;
@@ -686,12 +687,12 @@ section:nth-child(2n-1) {
   margin-left: 0;
 }
 .show__wrapper {
-  max-height: 100vh;
+  max-height: 100svh;
   width: 100vw;
   overflow: hidden;
 }
 .carousel {
-  min-height: 100vh;
+  min-height: 100svh;
   width: calc(100vw - 400px);
   overflow: hidden;
 }
@@ -702,7 +703,7 @@ section:nth-child(2n-1) {
   width: 100%;
 }
 .carousel__imgWrapper {
-  min-height: 100vh;
+  min-height: 100svh;
 }
 .carousel__actionWrapper {
   display: flex;
@@ -712,7 +713,7 @@ section:nth-child(2n-1) {
   position: absolute;
   top: 0;
   left: 0;
-  min-height: 100vh;
+  min-height: 100svh;
   width: 100%;
   overflow: hidden;
 }
@@ -965,19 +966,19 @@ section:nth-child(2n-1) {
     width: 100%;
   }
   .show__wrapper {
-    height: 100vh;
+    height: 100svh;
   }
   .carousel {
     width: 100%;
-    min-height: calc(100vh - 300px);
+    min-height: calc(100svg - 300px);
   }
   .carousel__imgWrapper {
-    max-height: calc(100vh - 300px);
-    min-height: calc(100vh - 300px);
+    max-height: calc(100svg - 300px);
+    min-height: calc(100svg - 300px);
   }
   .carousel__imgWrapper img {
-    max-height: calc(100vh - 300px);
-    min-height: calc(100vh - 300px);
+    max-height: calc(100svg - 300px);
+    min-height: calc(100svg - 300px);
   }
   .carousel__advantages {
     display: flex;

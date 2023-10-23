@@ -2083,7 +2083,7 @@ function onClose() {
   });
   anime({
     targets: overlayBottom,
-    translateY: ["-100vh", 0],
+    translateY: ["-100svg", 0],
     easing: "easeInCubic",
     duration: 600,
     delay: 200
@@ -2091,7 +2091,7 @@ function onClose() {
   anime({
     targets: overlayTop,
     duration: 600,
-    translateY: ["100vh", 0],
+    translateY: ["100svg", 0],
     easing: "easeInCubic",
     delay: 200,
     complete() {
@@ -2108,7 +2108,7 @@ function onOpen() {
   isAnimate = true;
   anime({
     targets: overlayBottom,
-    translateY: [0, "-100vh"],
+    translateY: [0, "-100svg"],
     easing: "easeOutCubic",
     duration: 400,
     complete() {
@@ -2131,7 +2131,7 @@ function onOpen() {
   anime({
     targets: overlayTop,
     duration: 400,
-    translateY: [0, "100vh"],
+    translateY: [0, "100svg"],
     easing: "easeOutCubic"
   });
 }
@@ -2237,4 +2237,4 @@ function arrowOnClick(nextIndex) {
 }
 prevNav.onclick = () => arrowOnClick(prevActiveIndex - 1);
 nextNav.onclick = () => arrowOnClick(prevActiveIndex + 1);
-//# sourceMappingURL=index-031ed522.js.map
+//# sourceMappingURL=index-73613e36.js.map
