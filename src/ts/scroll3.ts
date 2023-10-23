@@ -141,12 +141,12 @@ function animate() {
 
 	animateItems.forEach((item) => {
 		const {direction, elem, opacity, endToEnd, speed, isInertia} = item;
-		if (isInertia) {
+		// if (isInertia) {
 			const nProgress = (item.nextProgress - item.progress) * INERTIA
 			item.progress += clamp(nProgress, -1, 1);
-		} else {
-			item.progress = item.nextProgress;
-		}
+		// } else {
+		// 	item.progress = item.nextProgress;
+		// }
 
 		if (opacity) {
 			elem.style.opacity = String(item.progress * 10 * 1.9);

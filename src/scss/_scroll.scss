@@ -12,13 +12,3 @@ body {
   }
 }
 
-
-section {
-  &:nth-child(2n) {
-    background: #213547;
-  }
-
-  &:nth-child(2n - 1) {
-    background: #2f2147;
-  }
-}
