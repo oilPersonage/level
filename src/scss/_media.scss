@@ -53,20 +53,20 @@
 
   .show {
     &__wrapper {
-      height: 100vh;
+      height: 100svh;
     }
   }
   .carousel {
     width: 100%;
-    min-height: calc(100vh - 300px);
+    min-height: calc(100svg - 300px);
 
     &__imgWrapper {
-      max-height: calc(100vh - 300px);
-      min-height: calc(100vh - 300px);
+      max-height: calc(100svg - 300px);
+      min-height: calc(100svg - 300px);
 
       img {
-        max-height: calc(100vh - 300px);
-        min-height: calc(100vh - 300px);
+        max-height: calc(100svg - 300px);
+        min-height: calc(100svg - 300px);
       }
     }
 
