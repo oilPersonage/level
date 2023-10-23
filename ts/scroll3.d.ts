@@ -11,8 +11,13 @@ export type TScrollItemData = {
     bottom: number;
     height: number;
     opacity: boolean;
+    isInertia: boolean;
     helper: boolean;
     endToEnd: boolean;
     alternative: boolean;
+    progress: number;
+    position: number;
+    nextProgress: number;
+    nextPosition: number;
     direction: TDirection;
 };

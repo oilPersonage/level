@@ -134,6 +134,7 @@ const SCROLL_SPEED = 600;
 const DEFAULT_SPEED = 1;
 const DEFAULT_START = 0;
 const DEFAULT_END = 100;
+const INERTIA = 0.1;
 const scrollItems = [...document.querySelectorAll("[data-scroll-item]")];
 const animateItems = [];
 function createHelper(position, color) {
@@ -151,6 +152,7 @@ function makeScrollItem() {
     const elem = el;
     const speed = el.getAttribute("data-speed");
     const direction = el.getAttribute("data-direction");
+    const inertial = el.getAttribute("data-inertia") !== "false";
     const start = el.getAttribute("data-start");
     const end = el.getAttribute("data-end");
     const animateOpacity = el.getAttribute("data-opacity") === "";
@@ -181,90 +183,67 @@ function makeScrollItem() {
         opacity: animateOpacity,
         helper,
         alternative: alternativeScroll,
+        isInertia: inertial,
         direction: direction || "vertical",
-        endToEnd
+        endToEnd,
+        progress: 0,
+        nextProgress: 0,
+        position: 0,
+        nextPosition: 0
       };
       animateItems.push(animateData);
     }
   });
 }
 makeScrollItem();
-function setStyle(elem, progress, speed, endToEnd, opacity, direction, alternative) {
-  let position = endToEnd ? (1 - progress) * (SCROLL_SPEED * speed) : progress * (SCROLL_SPEED * speed);
-  if (alternative) {
-    position *= -1;
-  }
-  if (direction === "horizontal" /* HORIZONTAL */) {
-    elem.style.transform = `matrix(1, 0, 0, 1, ${position}, 0)`;
-  } else {
-    elem.style.transform = `matrix(1, 0, 0, 1, 0, ${position})`;
-  }
-  if (opacity) {
-    elem.style.opacity = String(Math.round(progress * 10) / 10);
-  }
-}
-scrollWrapper$1.addEventListener("scroll", (e) => {
+scrollWrapper$1.addEventListener("scroll", (_e) => {
   const scrollTop = scrollWrapper$1.scrollTop;
   animateItems.forEach(
-    ({
-      direction,
-      top,
-      bottom,
-      height,
-      speed,
-      end,
-      start,
-      elem,
-      opacity,
-      alternative,
-      helper,
-      endToEnd
-    }) => {
+    (item) => {
+      const {
+        top,
+        bottom,
+        height,
+        end,
+        start
+      } = item;
       const topBorder = top + height * (start / 100);
       const bottomBorder = bottom + height * end / 100;
       if (topBorder - scrollTop <= 0 && bottomBorder - scrollTop > 0) {
-        let progress = (scrollTop - topBorder) / (bottomBorder - topBorder);
-        if (progress > 0.98) {
-          progress = 1;
-        }
-        if (progress < 0.02) {
-          progress = 0;
-        }
-        setStyle(
-          elem,
-          progress,
-          speed,
-          endToEnd,
-          opacity,
-          direction,
-          alternative
-        );
+        item.nextProgress = (scrollTop - topBorder) / (bottomBorder - topBorder);
       } else if (topBorder - scrollTop > 0) {
-        const progress = 0;
-        setStyle(
-          elem,
-          progress,
-          speed,
-          endToEnd,
-          opacity,
-          direction,
-          alternative
-        );
+        item.nextProgress = 0;
       } else if (bottomBorder - scrollTop) {
-        const progress = 1;
-        setStyle(
-          elem,
-          progress,
-          speed,
-          endToEnd,
-          opacity,
-          direction,
-          alternative
-        );
+        item.nextProgress = 1;
       }
     }
   );
 });
+function clamp(val, min = 0, max = 3) {
+  return Math.min(Math.max(val, min), max);
+}
+function animate$1() {
+  animateItems.forEach((item) => {
+    const { direction, elem, opacity, endToEnd, speed, isInertia } = item;
+    if (isInertia) {
+      const nProgress = (item.nextProgress - item.progress) * INERTIA;
+      item.progress += clamp(nProgress, -1, 1);
+    } else {
+      item.progress = item.nextProgress;
+    }
+    if (opacity) {
+      elem.style.opacity = String(item.progress * 10 * 1.9);
+    }
+    item.position = endToEnd ? (1 - item.progress) * (SCROLL_SPEED * speed) : item.progress * (SCROLL_SPEED * speed);
+    if (direction === "horizontal" /* HORIZONTAL */) {
+      elem.style.transform = `matrix(1, 0, 0, 1, ${item.position}, 0)`;
+    } else {
+      elem.style.transform = `matrix(1, 0, 0, 1, 0, ${item.position})`;
+    }
+  });
+  requestAnimationFrame(animate$1);
+}
+animate$1();
 
 var fragment_default="#ifdef GL_ES\n  precision mediump float;\n#endif\n\nuniform vec4 resolution;\nuniform vec2 mouse;\nuniform vec2 threshold;\nuniform float time;\nuniform float pixelRatio;\nuniform sampler2D image0;\nuniform sampler2D image1;\n\nvec2 mirrored(vec2 v) {\n  vec2 m = mod(v,2.);\n  return mix(m,2.0 - m, step(1.0 ,m));\n}\n\nvoid main() {\n  \n  vec2 uv = pixelRatio*gl_FragCoord.xy / resolution.xy ;\n  vec2 vUv = (uv - vec2(0.5))*resolution.zw + vec2(0.5);\n  vUv.y = 1. - vUv.y;\n  vec4 tex1 = texture2D(image1,mirrored(vUv));\n  vec2 fake3d = vec2(vUv.x + (tex1.r - 0.5)*mouse.x/threshold.x, vUv.y + (tex1.r - 0.5)*mouse.y/threshold.y);\n  gl_FragColor = texture2D(image0,mirrored(fake3d));\n}";
 
@@ -1987,7 +1966,6 @@ let isAnimate$1 = false;
 openButtons.forEach(
   (el) => el.addEventListener("click", () => {
     isAnimate$1 = true;
-    console.log(1);
     modalWrapper.style.display = "flex";
     overlay.classList.add("show");
     anime({
@@ -2259,4 +2237,4 @@ function arrowOnClick(nextIndex) {
 }
 prevNav.onclick = () => arrowOnClick(prevActiveIndex - 1);
 nextNav.onclick = () => arrowOnClick(prevActiveIndex + 1);
-//# sourceMappingURL=index-761978da.js.map
+//# sourceMappingURL=index-031ed522.js.map
