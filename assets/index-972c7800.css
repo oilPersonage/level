@@ -1112,7 +1112,11 @@ body {
   }
   .header__arrowDown {
     left: 32px;
+    height: 20px;
     transform: none;
+  }
+  .header__arrowDown svg {
+    height: 100%;
   }
   .header__contacts {
     right: 32px;
