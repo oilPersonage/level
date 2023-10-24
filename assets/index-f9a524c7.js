@@ -2237,4 +2237,4 @@ function arrowOnClick(nextIndex) {
 }
 prevNav.onclick = () => arrowOnClick(prevActiveIndex - 1);
 nextNav.onclick = () => arrowOnClick(prevActiveIndex + 1);
-//# sourceMappingURL=index-589e83f8.js.map
+//# sourceMappingURL=index-f9a524c7.js.map
