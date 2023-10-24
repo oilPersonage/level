@@ -188,8 +188,15 @@ body {
   stroke-dasharray: 35;
   animation: dash 5s ease-in-out infinite;
 }
+.scroll-wrapper {
+  position: relative;
+  z-index: 3;
+}
 .scrolled {
   position: relative;
+}
+#headerCanvas {
+  position: fixed;
 }
 .overlay_top, .overlay_bottom, .overlay_line {
   position: fixed;
@@ -312,6 +319,9 @@ body {
 .header__videoDecorations__wrapper {
   display: flex;
   flex-direction: column;
+  height: 100%;
+}
+.header__videoDecorations__scroll {
   height: 100%;
 }
 .header__videoDecorations__svgWrapper {
