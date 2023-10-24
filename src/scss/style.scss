@@ -69,8 +69,17 @@
   }
 }
 
+.scroll-wrapper {
+  position: relative;
+  z-index: 3;
+}
+
 .scrolled {
   position: relative;
+}
+
+#headerCanvas {
+  position: fixed;
 }
 
 .overlay {
@@ -213,6 +222,10 @@
     &__wrapper {
       display: flex;
       flex-direction: column;
+      height: 100%;
+    }
+
+    &__scroll {
       height: 100%;
     }
 
