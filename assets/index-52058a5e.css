@@ -595,7 +595,7 @@ body {
   transition: 0.3s ease-in-out;
 }
 .menu__bg.show {
-  opacity: 0.7;
+  opacity: 0.98;
 }
 .menu__lang {
   color: white;
@@ -873,6 +873,7 @@ body {
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  color: #0F0F0F !important;
 }
 .carousel__infoButton span {
   pointer-events: none;
@@ -892,7 +893,7 @@ body {
   background: #0F0F0F;
 }
 .carousel__infoButton:hover {
-  color: #dfc690;
+  color: #dfc690 !important;
 }
 .carousel__infoButton:hover:after {
   visibility: visible;
