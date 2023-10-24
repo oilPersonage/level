@@ -248,6 +248,8 @@ body {
 .header__mobileImg {
   display: none;
   height: 100svh;
+  position: fixed;
+  top: 0;
 }
 .header__links {
   position: relative;
@@ -957,15 +959,15 @@ body {
   }
   .carousel {
     width: 100%;
-    min-height: calc(100svg - 300px);
+    min-height: calc(100% - 300px);
   }
   .carousel__imgWrapper {
-    max-height: calc(100svg - 300px);
-    min-height: calc(100svg - 300px);
+    max-height: calc(100% - 300px);
+    min-height: calc(100% - 300px);
   }
   .carousel__imgWrapper img {
-    max-height: calc(100svg - 300px);
-    min-height: calc(100svg - 300px);
+    max-height: calc(100% - 300px);
+    min-height: calc(100% - 300px);
   }
   .carousel__advantages {
     display: flex;
@@ -1022,6 +1024,9 @@ body {
   }
 }
 @media screen and (max-width: 768px) {
+  #headerCanvas {
+    display: none;
+  }
   h3 {
     font-size: 1em;
   }
