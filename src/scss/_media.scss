@@ -254,7 +254,12 @@
 
     &__arrowDown {
       left: $md;
+      height: $base * 5;
       transform: none;
+
+      svg {
+        height: 100%;
+      }
     }
 
     &__contacts {
