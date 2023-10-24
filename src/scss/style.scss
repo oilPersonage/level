@@ -90,12 +90,12 @@
     right: 0;
     opacity: 1;
     background: $dark;
-    height: 50svh;
+    height: 50%;
     width: 100%;
   }
 
   &_line {
-    top: 50%;
+    top: 50svh;
     transform: translate(-50%, -50%);
     left: 50%;
     width: 0;
@@ -105,7 +105,7 @@
     &:after {
       content: '';
       position: absolute;
-      top: 50%;
+      top: 50svh;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 160px;
