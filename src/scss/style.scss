@@ -139,6 +139,8 @@
   &__mobileImg {
     display: none;
     height: 100svh;
+    position: fixed;
+    top: 0;
   }
 
   &__links {

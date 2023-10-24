@@ -104,7 +104,11 @@ function makeScrollItem() {
 	});
 }
 
-makeScrollItem();
+document.onreadystatechange = function () {
+	if (document.readyState === 'complete') {
+		makeScrollItem();
+	}
+};
 
 
 scrollWrapper.addEventListener("scroll", (_e) => {
@@ -140,13 +144,9 @@ function clamp(val, min = 0, max = 3) {
 function animate() {
 
 	animateItems.forEach((item) => {
-		const {direction, elem, opacity, endToEnd, speed, isInertia} = item;
-		// if (isInertia) {
-			const nProgress = (item.nextProgress - item.progress) * INERTIA
-			item.progress += clamp(nProgress, -1, 1);
-		// } else {
-		// 	item.progress = item.nextProgress;
-		// }
+		const {direction, elem, opacity, endToEnd, speed} = item;
+		const nProgress = (item.nextProgress - item.progress) * INERTIA
+		item.progress += clamp(nProgress, -1, 1);
 
 		if (opacity) {
 			elem.style.opacity = String(item.progress * 10 * 1.9);

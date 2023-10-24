@@ -48,15 +48,15 @@
   }
   .carousel {
     width: 100%;
-    min-height: calc(100svg - 300px);
+    min-height: calc(100% - 300px);
 
     &__imgWrapper {
-      max-height: calc(100svg - 300px);
-      min-height: calc(100svg - 300px);
+      max-height: calc(100% - 300px);
+      min-height: calc(100% - 300px);
 
       img {
-        max-height: calc(100svg - 300px);
-        min-height: calc(100svg - 300px);
+        max-height: calc(100% - 300px);
+        min-height: calc(100% - 300px);
       }
     }
 
@@ -129,6 +129,9 @@
 
 
 @media screen and (max-width: 768px) {
+  #headerCanvas {
+    display: none;
+  }
   h3 {
     font-size: 1em;
   }
